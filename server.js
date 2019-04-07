@@ -24,7 +24,10 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-
+// Whoami endpoint
+app.get("/api/whoami", function (req, res) {
+  res.json({greeting: 'whoami'});
+});
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
