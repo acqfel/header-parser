@@ -26,7 +26,13 @@ app.get("/api/hello", function (req, res) {
 
 // Whoami endpoint
 app.get("/api/whoami", function (req, res) {
-  res.json({greeting: 'whoami'});
+  let ip_addr = req.ip;
+  let user_agent = req.get('User-Agent')
+  let accept_language = req.get('Accept-Language');
+
+  res.json({"ipaddress": ip_addr,
+            "language": accept_language,
+            "software": user_agent });
 });
 
 // listen for requests :)
